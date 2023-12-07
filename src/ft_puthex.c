@@ -6,25 +6,26 @@
 /*   By: rda-cunh <rda-cunh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:39:17 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/12/07 16:54:41 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/12/07 17:35:49 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_hexlen(char *str)
+int	ft_hexlen(unsigned int c)
 {
 	int len;
 	
 	len = 0;
-	while (str)
+	while (c != 0)
 	{
+		c = c/16;
 		len++;
 	}	
 	return (len);
 }	
 
-int ft_printhex (int c, char *base, len)
+int ft_printhex (unsigned int c, const char )
 {
 	int count;
 
@@ -41,12 +42,12 @@ int ft_printhex (int c, char *base, len)
 }
 
 
-int	ft_puthex(int c, char *base)
+int	ft_puthex(unsigned int c, char *base)
 {
 	char	*base;
 	int		len;
 
-	len = ft_hexlen(base);
+	len = ft_hexlen(c);
 	base = ft_(c, base, len);
 	free(str);
 	return (len); 
