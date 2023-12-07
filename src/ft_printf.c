@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 23:17:42 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/12/07 11:25:20 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/12/07 13:32:34 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,16 @@
 
 static int	ft_after_percent(va_list args, const char format)
 {
+	if (format == '%')
+		return (ft_putchar('%'));
 	if (format == 'c')
 		return (ft_putchar(va_arg(args, int)));
 	if (format == 's')
 		return (ft_putstr(va_arg(args, char *)));
+	if (format == 'd' || format == 'i')
+		return (ft_putnbr(va_arg(args, int)));
+	if (format == 'u')
+		return (ft_putnbr_u(va_arg(args, unsigned int)));
 	return (0);
 }
 
