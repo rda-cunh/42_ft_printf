@@ -6,24 +6,18 @@
 /*   By: rda-cunh <rda-cunh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 23:17:42 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/12/07 10:47:07 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/12/07 11:25:20 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static int	ft_putchar2(char c)
-{
-	write(1, &c, 1);
-	return(1);
-}
-
 static int	ft_after_percent(va_list args, const char format)
 {
 	if (format == 'c')
-		return (ft_putchar2(va_arg(args, int)));
-//	if (format == 's')
-//		return (ft_putstr(va_arg(args, char *)));
+		return (ft_putchar(va_arg(args, int)));
+	if (format == 's')
+		return (ft_putstr(va_arg(args, char *)));
 	return (0);
 }
 

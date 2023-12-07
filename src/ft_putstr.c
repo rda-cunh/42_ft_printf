@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rda-cunh <rda-cunh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 23:47:51 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/12/07 10:24:04 by rda-cunh         ###   ########.fr       */
+/*   Created: 2023/12/07 11:26:16 by rda-cunh          #+#    #+#             */
+/*   Updated: 2023/12/07 11:34:06 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_putstr(char *s)
 {
-	write(1, &c, 1);
-	return(1);
+	int i;
+
+	i = 0;
+	while (s[i])
+	{
+		write (1, &s[i], 1);
+		i++;
+	}
+	return (i+1);
 }
