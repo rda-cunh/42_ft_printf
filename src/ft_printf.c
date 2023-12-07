@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 23:17:42 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/12/07 14:58:42 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/12/07 15:52:01 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	ft_after_percent(va_list args, const char format)
 
 int	ft_printf(const char *format, ...)
 {
-	size_t	i;
+	int		i;
 	int		lenght;
 	va_list	args;
 
