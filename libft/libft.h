@@ -6,7 +6,7 @@
 /*   By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:54:20 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/11/17 18:39:35 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/12/06 23:49:27 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lsriter(t_list *lst, void (*f)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void(*del)(void *));
+
+//EXTRA FUNCTIONS//
+void	ft_putchar(char c);
 
 #endif

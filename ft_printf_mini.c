@@ -6,48 +6,44 @@
 /*   By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 23:17:42 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/12/07 00:13:06 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/12/06 22:08:32 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <stdarg.h>
+#include <stdio.h>
+#include "../ft_printf.h"
 
-static int	ft_after_percent(va_list args, const char format)
+void	ft_printf(const char *format, ...)
 {
-	if (format == 'c')
-		return (ft_putchar(va_arg(args, int)));
-//	if (format == 's')
-//		return (ft_putstr(va_arg(args, char *)));
-	return (0);
-}
-
-int	ft_printf(const char *format, ...)
-{
-	size_t	i;
-	int		lenght;
 	va_list	args;
 
-	if (!format)
-		return (-1);
-	i = 0;
-	lenght = 0;
 	va_start(args, format);
-	while (format[i])
+	while (*format)
 	{
-		if (format[i] == '%')
+		if (*format == '%')
 		{
-			i++;
-			lenght += ft_after_percent(args, format[i]);
+			format++;
+			if (*format == 'd')
+			{
+				printf("%d", va_arg(args, int));
+			}
+			else if (*format == 's')
+			{
+				printf("%s", va_arg(args, char *));
+			}
+			else
+			{
+				putchar(*format);
+			}
 		}
 		else
 		{
-			lenght++;
-			write(1, &format[i], 1);
+			putchar(*format);
 		}
-		i++;
+		format++;
 	}
 	va_end(args);
-	return (lenght);
 }
 /*
 int	main(void)
