@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rda-cunh <rda-cunh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 12:00:22 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/12/07 14:44:59 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/12/09 23:49:57 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,6 @@ static size_t	ft_digits_count(unsigned int n)
 	count = 0;
 	if (n == 0)
 		return (1);
-	if (n < 0)
-	{
-		count++;
-		n = -n;
-	}
 	while (n != 0)
 	{
 		count++;

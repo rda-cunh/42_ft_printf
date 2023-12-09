@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rda-cunh <rda-cunh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 18:02:44 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/12/07 14:46:05 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/12/09 23:48:26 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ int		ft_putchar(char c);
 int		ft_putstr(char *s);
 int		ft_putnbr(int c);
 int		ft_putnbr_u(unsigned int c);
+int		ft_puthex(unsigned int c, const char format);
 
 #endif

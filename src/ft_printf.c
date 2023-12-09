@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rda-cunh <rda-cunh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 23:17:42 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/12/07 15:52:01 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/12/08 18:40:01 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ static int	ft_after_percent(va_list args, const char format)
 		return (ft_putnbr(va_arg(args, int)));
 	else if (format == 'u')
 		return (ft_putnbr_u(va_arg(args, unsigned int)));
-	else if (format == 'x')
-		return (ft_puthex(va_arg(args, unsigned int), "0123456789abcd"));
-	else if (format == 'X')
-		return (ft_puthex(va_arg(args, unsigned int), "0123456789ABCD"));
+	else if (format == 'x' || format == 'X')
+		return (ft_puthex(va_arg(args, unsigned int), format));
 	return (0);
 }
 

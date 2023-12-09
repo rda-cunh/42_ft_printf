@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rda-cunh <rda-cunh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:39:17 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/12/07 17:35:49 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/12/09 23:52:59 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,41 +14,43 @@
 
 int	ft_hexlen(unsigned int c)
 {
-	int len;
-	
+	int	len;
+
 	len = 0;
 	while (c != 0)
 	{
-		c = c/16;
+		c = c / 16;
 		len++;
-	}	
+	}
 	return (len);
-}	
+}
 
-int ft_printhex (unsigned int c, const char )
+void	ft_printhex(unsigned int c, const char format)
 {
-	int count;
-
-	count = 0;	
-	if (c < len)
+	if (c > 16)
 	{
-		return (ft_putchar(base[c]));
+		ft_printhex(c / 16, format);
+		ft_printhex(c % 16, format);
 	}
 	else
 	{
-		count = ft_printhex()
-		return ()
+		if (c <= 9)
+			ft_putchar(c + '0');
+		else
+		{
+			if (format == 'x')
+				ft_putchar(c - 10 + 'a');
+			if (format == 'x')
+				ft_putchar(c - 10 + 'A');
+		}
 	}
 }
 
-
-int	ft_puthex(unsigned int c, char *base)
+int	ft_puthex(unsigned int c, const char format)
 {
-	char	*base;
-	int		len;
-
-	len = ft_hexlen(c);
-	base = ft_(c, base, len);
-	free(str);
-	return (len); 
+	if (c == 0)
+		return (write (1, "0", 1));
+	else
+		ft_printhex (c, format);
+	return (ft_hexlen(c));
 }
