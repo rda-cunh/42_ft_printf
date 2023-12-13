@@ -6,7 +6,7 @@
 /*   By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 12:00:22 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/12/09 23:49:57 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/12/13 22:21:23 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,5 @@ int	ft_putnbr_u(unsigned int c)
 	str = ft_utoa(c);
 	len = ft_putstr(str);
 	free(str);
-	return (len); 
+	return (len);
 }

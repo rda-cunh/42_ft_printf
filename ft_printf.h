@@ -6,7 +6,7 @@
 /*   By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 18:02:44 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/12/09 23:48:26 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/12/13 23:33:10 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int		ft_putstr(char *s);
 int		ft_putnbr(int c);
 int		ft_putnbr_u(unsigned int c);
 int		ft_puthex(unsigned int c, const char format);
+int		ft_putpointer(unsigned long long ptr);
 
 #endif

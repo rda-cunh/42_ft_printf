@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rda-cunh <rda-cunh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 12:00:22 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/12/07 13:09:40 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/12/13 22:37:15 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ int	ft_putnbr(int c)
 	str = ft_itoa(c);
 	len = ft_putstr(str);
 	free(str);
-	return (len); 
+	return (len);
 }
