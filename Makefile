@@ -6,7 +6,7 @@
 #    By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/28 18:01:20 by rda-cunh          #+#    #+#              #
-#    Updated: 2023/12/13 23:32:40 by rda-cunh         ###   ########.fr        #
+#    Updated: 2023/12/14 19:07:29 by rda-cunh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,11 @@ LIBFT_SRCS = $(addprefix $(LIBFT_DIR), ft_itoa.c)
 OBJS = $(SRCS:.c=.o)
 LIBFT_OBJS = $(LIBFT_SRCS:.c=.o)
 
-CC = cc -g
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 MAKE = make -C
-RM = rm -f
+RM = rm -rf
 
 all: $(NAME)
 
@@ -32,9 +32,11 @@ $(NAME): $(OBJS) $(LIBFT_OBJS)
 	$(AR) $(NAME) $^
 	
 clean: 
+	$(MAKE) clean $(LIBFT_DIR)
 	$(RM) $(OBJS) $(LIBFT_OBJS)
 
 fclean: clean
+	$(MAKE) fclean $(LIBFT_DIR)
 	$(RM) $(NAME)
 
 re: fclean all
