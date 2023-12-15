@@ -6,7 +6,7 @@
 /*   By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:39:17 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/12/09 23:52:59 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/12/14 23:44:31 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_hexlen(unsigned int c)
 
 void	ft_printhex(unsigned int c, const char format)
 {
-	if (c > 16)
+	if (c > 15)
 	{
 		ft_printhex(c / 16, format);
 		ft_printhex(c % 16, format);
@@ -40,7 +40,7 @@ void	ft_printhex(unsigned int c, const char format)
 		{
 			if (format == 'x')
 				ft_putchar(c - 10 + 'a');
-			if (format == 'x')
+			if (format == 'X')
 				ft_putchar(c - 10 + 'A');
 		}
 	}
