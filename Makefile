@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile_2                                         :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/14 23:03:04 by rda-cunh          #+#    #+#              #
-#    Updated: 2023/12/16 16:11:53 by rda-cunh         ###   ########.fr        #
+#    Updated: 2023/12/16 16:19:38 by rda-cunh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ LIBFT		= ./libft/libft.a
 LIBFTDIR	= ./libft
 
 SRC_DIR		= ./src
-PRINTF_SRCS	= $(addprefix $(SRC_DIR), ft_printf.c ft_putchar.c ft_putstr.c ft_putnbr.c ft_putnbr_u.c ft_puthex.c ft_putpointer.c)
+PRINTF_SRCS	= ft_printf.c ft_putchar.c ft_putstr.c ft_putnbr.c ft_putnbr_u.c ft_puthex.c ft_putpointer.c
 
 OBJS		= $(PRINTF_SRCS:.c=.o)
 
