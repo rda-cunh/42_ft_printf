@@ -6,7 +6,7 @@
 #    By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/14 23:03:04 by rda-cunh          #+#    #+#              #
-#    Updated: 2023/12/16 16:47:10 by rda-cunh         ###   ########.fr        #
+#    Updated: 2023/12/16 16:51:43 by rda-cunh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,21 +30,21 @@ all:		$(NAME)
 
 $(NAME):	$(LIBFT) $(OBJS)
 			$(CP) $(LIBFT) $(NAME)
-			@$(AR) $(NAME) $(OBJS)
+			$(AR) $(NAME) $(OBJS)
 
 $(LIBFT):	$(LIBFTDIR)
-			@$(MAKE) -C $(LIBFTDIR)
+			$(MAKE) -C $(LIBFTDIR)
 
 %.o: 		$(SRC_DIR)/%.c
-			@$(CC) $(CFLAGS) -c $< -o $@
+			$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-			@$(MAKE) clean -C $(LIBFTDIR)
-			@$(RM) $(OBJS)
+			$(MAKE) clean -C $(LIBFTDIR)
+			$(RM) $(OBJS)
 
 fclean:		clean
-			@$(MAKE) fclean -C $(LIBFTDIR)
-			@$(RM) $(NAME)
+			$(MAKE) fclean -C $(LIBFTDIR)
+			$(RM) $(NAME)
 
 re:			fclean all
 
