@@ -1,53 +1,59 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    Makefile_clean_not_working                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/14 23:03:04 by rda-cunh          #+#    #+#              #
-#    Updated: 2023/12/14 23:57:07 by rda-cunh         ###   ########.fr        #
+#    Created: 2023/11/28 18:01:20 by rda-cunh          #+#    #+#              #
+#    Updated: 2023/12/16 15:52:11 by rda-cunh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= libftprintf.a
+NAME = libftprintf.a
 
-LIBFT		= ./libft/libft.a
-LIBFTDIR	= ./libft
+SRCS_DIR = src/
+LIBFT_DIR = libft/
+SRCS = $(addprefix $(SRCS_DIR), ft_printf.c ft_putchar.c ft_putstr.c ft_putnbr.c ft_putnbr_u.c ft_puthex.c ft_putpointer.c)
+LIBFT_SRCS = $(addprefix $(LIBFT_DIR), ft_itoa.c)
+OBJS = $(SRCS:.c=.o)
+LIBFT_OBJS = $(LIBFT_SRCS:.c=.o)
 
-SRC			= ./src
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+AR = ar rcs
+MAKE = make -C
+RM = rm -rf
 
-PRINTF_SRCS	= ft_printf.c ft_putchar.c ft_putstr.c ft_putnbr.c \
-			 ft_putnbr_u.c ft_puthex.c ft_putpointer.c
+all: $(NAME)
 
-OBJS		= $(PRINTF_SRCS:.c=.o)
+$(NAME): NAME = libftprintf.a
 
-CC			= cc -g
-AR			= ar rcs
-RM			= rm -rf 
-CFLAGS		= -Wall -Wextra -Werror
-CP			= cp
+SRCS_DIR = src/
+LIBFT_DIR = libft/
+SRCS = $(addprefix $(SRCS_DIR), ft_printf.c ft_putchar.c ft_putstr.c ft_putnbr.c ft_putnbr_u.c ft_puthex.c ft_putpointer.c)
+LIBFT_SRCS = $(addprefix $(LIBFT_DIR), ft_itoa.c)
+OBJS = $(SRCS:.c=.o)
+LIBFT_OBJS = $(LIBFT_SRCS:.c=.o)
 
-all:		$(NAME)
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+AR = ar rcs
+MAKE = make -C
+RM = rm -rf
 
-$(NAME):	$(LIBFT) $(OBJS)
-				$(CP) $(LIBFT) $(NAME)
-				@$(AR) $(NAME) $(OBJS)
+all: $(NAME)
 
-$(LIBFT):	$(LIBFTDIR)
-				@$(MAKE) -C $(LIBFTDIR)
+$(NAME): $(OBJS) $(LIBFT_OBJS)
+	$(MAKE) $(LIBFT_DIR)
+	$(AR) $(NAME) $(OBJS) $(LIBFT_OBJS)
+	
+clean: 
+	$(MAKE) clean $(LIBFT_DIR)
+	$(RM) $(OBJS) $(LIBFT_OBJS)
 
-%.o: 		$(SRC)/%.c
-				@$(CC) $(CFLAGS) -c $< -o $@
+fclean: clean
+	$(MAKE) fclean $(LIBFT_DIR)
+	$(RM) $(NAME)
 
-clean:
-			@$(MAKE) clean -C $(LIBFTDIR)
-			@$(RM) $(OBJS)
-
-fclean:		clean
-				@$(MAKE) fclean -C $(LIBFTDIR)
-				@$(RM) $(NAME)
-
-re:			fclean all
-
-.PHONY:		all clean fclean re
+re: fclean all
